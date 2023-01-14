@@ -16,6 +16,9 @@ export const startServer = async () => {
     app.use('/api', router)
     app.use(errors())
     app.use(validatorErrorHandler)
+    app.get('/', (req, res) => {
+        res.send('🦉');
+    })
 
     app.listen(port, () => {
         console.log(`⚡️[server]: Server is running at https://localhost:${port}`);
