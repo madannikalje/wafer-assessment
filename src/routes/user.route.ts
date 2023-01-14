@@ -7,7 +7,7 @@ import { UserModel } from '../database';
 import { signupBodyValidator } from '../middlewares/validators';
 import bcrypt from 'bcrypt';
 
-export const userRoute = ( app: Router ) => {
+export const userRoute = (app: Router) => {
     app.post('/auth/signup',
         signupBodyValidator,
         async (req: Request, res: Response) => {
