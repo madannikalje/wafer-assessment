@@ -71,8 +71,8 @@ export const userRoute = (app: Router) => {
                             res.status(400).send({ message: 'User already verified' });
                         } else {
                             smsService.verifyCode(req.body.mobile, req.body.code)
-                                .then((res: any) => {
-                                    if (res.valid) {
+                                .then((validationResponse: any) => {
+                                    if (validationResponse.valid) {
                                         UserModel.query()
                                             .findOne({ mobile: req.body.mobile })
                                             .patch({ verified: true })
@@ -126,5 +126,4 @@ export const userRoute = (app: Router) => {
                 })
         }
     )
-
 }
