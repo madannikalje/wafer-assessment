@@ -2,10 +2,10 @@ module.exports = {
     development: {
             client: 'pg',
             connection: {
-            host: process.env.DATABASE_HOST,
-            user: process.env.DATABASE_USER,
-            password: process.env.DATABASE_PASSWORD,
-            database: process.env.DATABASE_NAME,
+            host: "database-1.clypw1lkrb0q.ap-south-1.rds.amazonaws.com",
+            user: "postgres",
+            password: "madan12!",
+            database: "test_db",
         },
         migrations: {
         directory: './src/database/migrations',
