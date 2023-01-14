@@ -1,7 +1,7 @@
 import { smsService } from './../services/sms.service';
 import { generateToken } from './../utils/index';
 import { loginBodyValidator, verifyBodyValidator, otpSendBodyValidator } from './../middlewares/validators';
-import { Router, Request, Response, NextFunction } from 'express';
+import { Router, Request, Response } from 'express';
 import { UniqueViolationError } from 'objection';
 import { UserModel } from '../database';
 import { signupBodyValidator } from '../middlewares/validators';
