@@ -71,16 +71,20 @@ export const userRoute = (app: Router) => {
                             res.status(400).send({ message: 'User already verified' });
                         } else {
                             smsService.verifyCode(req.body.mobile, req.body.code)
-                                .then(() => {
-                                    UserModel.query()
-                                        .findOne({ mobile: req.body.mobile })
-                                        .patch({ verified: true })
-                                        .then((user) => {
-                                            res.status(200).send({ message: 'User verified' });
-                                        })
-                                        .catch(err => {
-                                            res.status(400).send({ message: 'Error verifying user' });
-                                        })
+                                .then((res: any) => {
+                                    if (res.valid) {
+                                        UserModel.query()
+                                            .findOne({ mobile: req.body.mobile })
+                                            .patch({ verified: true })
+                                            .then((user) => {
+                                                res.status(200).send({ message: 'User verified' });
+                                            })
+                                            .catch(err => {
+                                                res.status(400).send({ message: 'Error verifying user' });
+                                            })
+                                    } else {
+                                        res.status(400).send({ message: 'Invalid code' });
+                                    }
                                 })
                                 .catch(err => {
                                     res.status(400).send({ message: 'Invalid code' });
