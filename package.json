@@ -1,0 +1,54 @@
+{
+  "name": "typescript-starter-npm",
+  "version": "1.0.0",
+  "description": "A very simple and basic Typescript Starter boilerplate template based on npm",
+  "author": "Savas Ziplies",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nea/Typescript-Starter"
+  },
+  "bugs": "https://github.com/nea/Typescript-Starter/issues",
+  "keywords": [
+    "npm",
+    "scripts",
+    "watch",
+    "typescript",
+    "tsc",
+    "onchange"
+  ],
+  "scripts": {
+    "start": "ts-node-dev --respawn --transpile-only src/main.ts",
+    "migration:run": "knex migrate:latest",
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "prettier": "^2.8.1",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^4.4.4"
+  },
+  "dependencies": {
+    "@types/node": "^18.11.17",
+    "bcrypt": "^5.1.0",
+    "body-parser": "^1.20.1",
+    "celebrate": "^15.0.1",
+    "class-validator": "^0.14.0",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "fs": "^0.0.1-security",
+    "jsonwebtoken": "^9.0.0",
+    "knex": "^2.4.0",
+    "mysql2": "^2.3.3",
+    "objection": "^3.0.1",
+    "passport": "^0.6.0",
+    "passport-jwt": "^4.0.1",
+    "passport-local": "^1.0.0",
+    "path": "^0.12.7",
+    "pg": "^8.8.0",
+    "twilio": "^3.84.1",
+    "typedi": "^0.10.0",
+    "typeorm": "^0.3.11"
+  }
+}
